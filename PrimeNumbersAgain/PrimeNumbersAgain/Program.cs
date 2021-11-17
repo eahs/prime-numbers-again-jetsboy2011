@@ -23,12 +23,41 @@ namespace PrimeNumbersAgain
             EvaluatePassingTime(timer.Elapsed.Seconds);
         }
 
+        
+
         static int FindNthPrime(int n)
         {
-            return 0;
+            int PNumbers =1;
+          
+            int num = Convert.ToInt32(Console.ReadLine());
+            n = 3;
+            while (n < num)
+            {
+                int counter = 0;
+                for (int j = 3; j < Math.Sqrt(num) ; j = j + 2)
+                {
+                    
+                    if (n % j == 0)
+                    {
+                        counter++;
+                        
+                    }
+                }
+                if (counter ==0)
+                {
+                    PNumbers++;
+                }
+
+                n = n + 2;
+            }
+
+            return PNumbers;
         }
 
-        static int GetNumber()
+        
+        
+
+static int GetNumber()
         {
             int n = 0;
             while (true)
@@ -45,7 +74,10 @@ namespace PrimeNumbersAgain
             }
         }
 
-        static void PrintBanner()
+
+
+
+static void PrintBanner()
         {
             Console.WriteLine(".................................................");
             Console.WriteLine(".#####...#####...######..##...##..######...####..");
